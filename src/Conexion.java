@@ -4,13 +4,6 @@ public class Conexion {
         String user = "admin";
         String password = "1234";
 
-        try {
-            // Conexión a la base de datos
-            Connection conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexión exitosa a la base de datos.");
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        ConexionBaseDeDatos.ConexionBaseDeDatos(url, user, password);
     }
 }
