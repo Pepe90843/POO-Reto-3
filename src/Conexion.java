@@ -4,6 +4,7 @@ public class Conexion {
         String user = "admin";
         String password = "1234";
 
+        //Llamada a la función para conectar a la base de datos
         ConexionBaseDeDatos.ConexionBaseDeDatos(url, user, password);
     }
 }
