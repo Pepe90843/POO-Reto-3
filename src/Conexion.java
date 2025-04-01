@@ -1,10 +1,22 @@
-public class Conexion {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+
+public class Conexion{
     public static void main(String[] args) {
-        String url = "jdbc:mysql://127.0.0.1:3306/bdbiblioteca";
+        String url = "jdbc:mysql://127.0.0.1:3306/bdblioteca";
         String user = "admin";
         String password = "1234";
 
-        //Llamada a la función para conectar a la base de datos
-        ConexionBaseDeDatos.ConexionBaseDeDatos(url, user, password);
+        try {
+            // Conexión a la base de datos
+            Connection conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Conexión exitosa a la base de datos.");
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
