@@ -19,7 +19,7 @@ public class Conexion{
                 return;
             }
             System.out.println("Conexión exitosa a la base de datos.");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

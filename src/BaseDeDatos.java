@@ -8,7 +8,8 @@ public class BaseDeDatos {
         System.out.println(mensaje);
     }
 
-    public static void ConexionBaseDeDatos(String url, String user, String password){
+    public static Connection ConexionBaseDeDatos(String url, String user, String password){
+        Connection conn = null;
         try {
             // Conexión a la base de datos
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,6 +20,7 @@ public class BaseDeDatos {
             //Printea el error SQL
             e.printStackTrace();
         }
+        return conn;
     }
 
     public static boolean cerrarConexion(Connection conn){
