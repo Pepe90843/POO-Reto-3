@@ -1,27 +1,24 @@
+java.lang.ClassNotFoundException: Conexion;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
-
-
-public class Conexion{
+public class Conexion {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://192.168.56.1:3306/bdbiblioteca";
+        String url = "jdbc:mysql://25.7.155.29:3306/bdbiblioteca";
         String user = "admin";
         String password = "1234";
-        Connection conn=null;
+        Connection conn = null;
 
-        try {
-            // Conexión a la base de datos
-            conn = BaseDeDatos.ConexionBaseDeDatos(url, user, password);
-            if (conn==null) {
-                BaseDeDatos.mensa("No se pudo establecer la conexión");
-                return;
-            }
-            System.out.println("Conexión exitosa a la base de datos.");
-        } catch (Exception e) {
-            e.printStackTrace();
+        System.out.println("*********************************************************************");
+        System.out.println("***/                    BIBLIOTECA MUSKIZ                        /***");
+        System.out.println("*********************************************************************\n");
+
+        // Conexión a la base de datos
+        conn = BaseDeDatos.ConexionBaseDeDatos(url, user, password);
+        if (conn == null) {
+            BaseDeDatos.mensa("No se pudo establecer la conexión");
+            return;
         }
+        System.out.println("Conexión exitosa a la base de datos.");
 
         BaseDeDatos.cerrarConexion(conn);
     }
