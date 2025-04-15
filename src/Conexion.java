@@ -34,6 +34,9 @@ public class Conexion {
                 BaseDeDatos.cerrarConexion(conn);
                 BaseDeDatos.mensa("Conexión cerrada exitosamente!");
                 break;
+            case 5:
+            
+                break;
             default:
                 BaseDeDatos.mensa("Elige una de las opciones que se dan.");
                 break;
